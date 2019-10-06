@@ -3,10 +3,10 @@ const pool = new Pool({
   user: 'me',
   host: 'localhost',
   database: 'tokimon',
-  password: 'password',
+  password: '123',
   port: 5432,
 })
-const getUsers = (request, response) => {
+const getTokimon = (request, response) => {
     pool.query('SELECT * FROM Tokimon', (error, results) => {
       if (error) {
         throw error
@@ -15,5 +15,5 @@ const getUsers = (request, response) => {
     })
 }
 module.exports = {
-    getUsers
+    getTokimon
   }
