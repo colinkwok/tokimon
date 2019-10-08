@@ -8,8 +8,8 @@ var app = express();
 const { Pool } = require('pg');
 var pool;
 pool = new Pool({
-  connectionString: process.env.DATABASE_URL
-
+  connectionString: process.env.DATABASE_URL,
+  ssl: true
   // user: 'postgres',
   // host: 'localhost',
   // database: 'users',
