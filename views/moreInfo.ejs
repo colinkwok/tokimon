@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 15px;
+      text-align: left;
+    }
+    table {
+      border-collapse: collapse;
+    }
+  </style>
+  </head>
+  <body>
+    <body>
+      <h1>Specific Tokimon Info</h1>
+      <table id = "tokimon_table">
+          <tr>
+            <th>Tokimon ID</th>
+            <th>Name</th>
+            <th>Weight</th>
+            <th>Height</th>
+            <th>Fly</th>
+            <th>Fight</th>
+            <th>Fire</th>
+            <th>Water</th>
+            <th>Electric</th>
+            <th>Frozen</th>
+            <th>Total</th>
+            <th>Trainer</th>
+          </tr>
+          <% rows.forEach((r) => { %>
+            <tr>
+                <td> <%= r.tokimonid %> </td>
+                <td> <%= r.name %> </td>
+                <td> <%= r.weight %> </td>
+                <td> <%= r.height %> </td>
+                <td> <%= r.fly %> </td>
+                <td> <%= r.fight %> </td>
+                <td> <%= r.fire %> </td>
+                <td> <%= r.water %> </td>
+                <td> <%= r.electric %> </td>
+                <td> <%= r.frozen %> </td>
+                <td> <%= r.total %> </td>
+                <td> <%= r.trainer %> </td>
+            </tr>
+          <% }) %>
+      </table>
+  </body>
+  </body>
+</html>

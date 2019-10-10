@@ -17,7 +17,14 @@ app.use(express.urlencoded({ extended: false }));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
-  res.render('index')
+  // res.render('index')
+  var getUsersQuery = `SELECT * FROM Tokimon`;
+  pool.query(getUsersQuery, (error,result) => {
+    if (error)
+      res.end(error.toString());
+    var results = {'rows': result.rows};
+    res.render('./index',results)  
+  })
 })
 app.get('/tokimon',(req,res) => {
   var getUsersQuery = `SELECT * FROM Tokimon`;
@@ -73,6 +80,61 @@ app.post('/deleted', (req,res) => {
     res.send(`Tokimon With ID: ${tokimonid} has been deleted from the database`);
   })
 });
+
+app.get('/change',(req,res) => {
+  var getUsersQuery = `SELECT * FROM Tokimon`;
+  pool.query(getUsersQuery, (error,result) => {
+    if (error)
+      res.end(error.toString());
+    var results = {'rows': result.rows};
+    res.render('./change',results)  
+  })
+});
+app.post('/changed', (req,res) => {
+  var tokimonid = req.body.tokimonid;
+  var name = req.body.name;
+  var weight = req.body.weight;
+  var height = req.body.height;
+  var fly = req.body.fly;
+  var fight = req.body.fight;
+  var fire = req.body.fire;
+  var water = req.body.water;
+  var electric = req.body.electric;
+  var frozen = req.body.frozen;
+  var total = parseFloat(fly) + parseFloat(fight) + parseFloat(fire) + parseFloat(water) + parseFloat(electric) + parseFloat(frozen);
+  var trainer = req.body.trainer;
+  var changeQuery = `UPDATE Tokimon SET name = '${name}', weight = ${weight}, height = ${height}, fly = ${fly}, fight = ${fight}, fire= ${fire}, water = ${water}, electric = ${electric}, frozen = ${frozen}, total = ${total}, trainer = '${trainer}' WHERE tokimonid = ${tokimonid}`;
+  console.log(changeQuery)
+  pool.query(changeQuery, (error,result) => {
+    if (error)
+      res.end(error.toString());
+    res.send(`Tokimon With ID: ${tokimonid} has been updated in the database`);
+  })
+});
+
+app.get('/tokimon/:id', (req,res) => {
+  // console.log(req.params.id);
+  // console.log("hello")
+  // var tokimonid = req.body.tokimonid;
+  var userIDQuery = `SELECT * FROM Tokimon WHERE tokimonid=${req.params.id}`;
+  pool.query(userIDQuery, (error,result) => {
+    if (error)
+      res.end(error.toString());
+    var results = {'rows': result.rows};
+    res.render('./moreInfo',results) 
+  })
+});
+
+app.get('/info',(req,res) => {
+  var getUsersQuery = `SELECT * FROM Tokimon`;
+  pool.query(getUsersQuery, (error,result) => {
+    if (error)
+      res.end(error.toString());
+    var results = {'rows': result.rows};
+    res.render('./info', results);  
+  })
+});
+
 
 // app.post('/login', (req,res) => {
 //   // console.log('post');

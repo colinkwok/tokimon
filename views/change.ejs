@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Change a Tokimon</h1>
+    <table id = "tokimon_table">
+        <tr>
+          <th>Tokimon ID</th>
+          <th>Name</th>
+          <th>Weight</th>
+          <th>Height</th>
+          <th>Fly</th>
+          <th>Fight</th>
+          <th>Fire</th>
+          <th>Water</th>
+          <th>Electric</th>
+          <th>Frozen</th>
+          <th>Total</th>
+          <th>Trainer</th>
+        </tr>
+        <% rows.forEach((r) => { %>
+          <tr>
+            <td> <%= r.tokimonid %> </td>
+            <td> <%= r.name %> </td>
+            <td> <%= r.weight %> </td>
+            <td> <%= r.height %> </td>
+            <td> <%= r.fly %> </td>
+            <td> <%= r.fight %> </td>
+            <td> <%= r.fire %> </td>
+            <td> <%= r.water %> </td>
+            <td> <%= r.electric %> </td>
+            <td> <%= r.frozen %> </td>
+            <td> <%= r.total %> </td>
+            <td> <%= r.trainer %> </td>
+          </tr>
+        <% }) %>
+    </table>
+    <form class="" action="/changed" method="post">
+        <input id ="changeID" type="number" name="tokimonid" placeholder="Enter the Tokimon ID of the Tokimon to Change">
+        <input id ="newName" type="text" name="name" placeholder="New Name">
+        <input id ="newWeight" type="number" name="weight" placeholder="New Weight">
+        <input id ="newHeight" type="number" name="height" placeholder="New Height">
+        <input id ="newFly" type="number" name="fly" placeholder="New Fly Value ">
+        <input id ="newFight" type="number" name="fight" placeholder="New Fight Value">
+        <input id ="newFire" type="number" name="fire" placeholder="New Fire Value">
+        <input id ="newWater" type="number" name="water" placeholder="New Water Value">
+        <input id ="newElectric" type="number" name="electric" placeholder="New Electric Value">
+        <input id ="newFrozen" type="number" name="frozen" placeholder="New Frozen Value">
+        <input id ="newTrainer" type="text" name="trainer" placeholder="New Trainer">
+        <input type="submit" name="" value="Change Tokimon">
+    </form> 
+    <button type="button" id ="add">Add a Tokimon</button>
+    <button type="button" id ="delete">Delete a Tokimon</button>
+    <button type="button" id ="display">Display a Tokimon</button>
+    <button type="button" id ="all">See All Tokimon</button>  
+  </body>
+</html>
