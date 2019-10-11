@@ -7,7 +7,7 @@ const { Pool } = require('pg');
 var pool;
 pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: true // comment out if developing locally
+  // ssl: true // comment out if developing locally
 });
 
 
@@ -80,6 +80,16 @@ app.post('/deleted', (req,res) => {
     res.send(`Tokimon With ID: ${tokimonid} has been deleted from the database`);
   })
 });
+// app.post('/deleteMultiple', (req,res) => {
+//   console.log(req.body);
+//   // var tokimonid = req.body.tokimonid;
+//   // var deleteQuery = `DELETE FROM Tokimon WHERE tokimonid = '${tokimonid}'`;
+//   // pool.query(deleteQuery, (error,result) => {
+//   //   if (error)
+//   //     res.end(error.toString());
+//   //   res.send(`Tokimon With ID: ${tokimonid} has been deleted from the database`);
+//   // })
+// });
 
 app.get('/change',(req,res) => {
   var getUsersQuery = `SELECT * FROM Tokimon`;

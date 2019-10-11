@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <!-- <script src="/js/script.js" defer></script> -->
+    <script src="/js/script.js" defer></script>
     <link rel = "stylesheet" type = "text/css" href = "/stylesheets/styles.css" />
   </head>
   <body>
     <!-- <script src="../public/js/script.js" defer></script> -->
     <h1>Delete a Tokimon</h1>
 
-    <!-- <form class="deleteTable" action="/deleted" method="post">
+    <!-- <form class="deleteTable" action="/deleteMultiple" method="post">
       <table id = "tokimon_table">
           <tr>
             <th>Delete?</th>
@@ -45,13 +45,12 @@
             </tr>
           <% }) %>
       </table>
-      <input type="submit" name="" value="Delete Selected Tokimon">
+      <input type="submit" name="" value="Delete All Selected Tokimon">
     </form> -->
 
 
     <table id = "tokimon_table">
             <tr>
-              <!-- <th>Delete?</th> -->
               <th>Tokimon ID</th>
               <th>Name</th>
               <th>Weight</th>
@@ -67,7 +66,6 @@
             </tr>
             <% rows.forEach((r) => { %>
               <tr>
-                <!-- <td><input type="checkbox" id ="<%= r.tokimonid %>Check" name="delete" value=""></td> -->
                 <td> <%= r.tokimonid %> </td>
                 <td> <%= r.name %> </td>
                 <td> <%= r.weight %> </td>
@@ -87,7 +85,7 @@
     <form class="" action="/deleted" method="post">
       <input id ="deleteID" type="number" name="tokimonid" placeholder="Enter the Tokimon ID of the Tokimon to Delete">
       <input type="submit" name="tokimonDelete" value="Delete Tokimon">
-  </form> 
+    </form> 
 
     <button type="button" id ="add">Add a Tokimon</button>
     <button type="button" id ="change">Change a Tokimon</button>

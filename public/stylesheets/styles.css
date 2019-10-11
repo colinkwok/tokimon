@@ -13,9 +13,9 @@ table {
   border-collapse: collapse;
 }
 #tokimon_sizes {
-  height: 90%;
-  width: 100%;
-  display: inline-flex;
+  /* height: 90%; */
+  /* width: 100%; */
+  display: inline;
   /* background-color: orange; */
   align-items: flex-end;
   justify-content: center;
