@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel = "stylesheet" type = "text/css" href = "/stylesheets/styles.css" />
+    <% rows.forEach((r) => { %>
+      <style>
+           #ID<%= r.tokimonid %> {
+              color: red;
+              /* float: left; */
+              margin: 1%;
+              background-color: black;
+              width: <%= r.weight %>px;
+              height: <%= r.height %>px; 
+              max-width: 90%;
+              max-height: 90%;
+              display: inline-flex;
+              align-items: flex-end;
+              justify-content: center;
+           }  
+           #P<%= r.tokimonid %> {
+            text-align: center;
+           }  
+      </style>
+     <% }) %>
+  </head>
+  <body>
+    <body>
+      <h1>Tokimon Size</h1>
+        <div id = "tokimon_sizes">
+          <% rows.forEach((r) => { %>
+           <div id = "ID<%= r.tokimonid %>" >
+             <p id = "P<%= r.tokimonid %>"> 
+                Tokimon ID: <%= r.tokimonid %>
+                <br> <%= r.name %>  
+                <% if (r.height >= 1151) { %>
+                  <br>Tokimon is very tall and is not shown to scale
+                  
+                <%  } %>
+                <%  if (r.height >= 684) { %>
+                <br> Tokimon is very heavy and is not shown to scale
+                <%  } %>
+             </p>
+           </div>
+          <% }) %>
+        </div>
+  </body>
+  </body>
+</html>

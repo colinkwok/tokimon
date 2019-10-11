@@ -1,0 +1,22 @@
+html,body{
+  height: 100%;
+  background-color: lightcyan; 
+}
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+table {
+  border-collapse: collapse;
+}
+#tokimon_sizes {
+  height: 90%;
+  width: 100%;
+  display: inline-flex;
+  /* background-color: orange; */
+  align-items: flex-end;
+  justify-content: center;
+}

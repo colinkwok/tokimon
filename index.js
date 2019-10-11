@@ -54,7 +54,7 @@ app.post('/added', (req,res) => {
   var total = parseFloat(fly) + parseFloat(fight) + parseFloat(fire) + parseFloat(water) + parseFloat(electric) + parseFloat(frozen);
   var trainer = req.body.trainer;
   var addTokiQuery = `INSERT INTO Tokimon (name, weight, height, fly, fight, fire, water, electric, frozen, total, trainer) VALUES ('${name}',${weight},${height},${fly},${fight},${fire},${water},${electric},${frozen},${total},'${trainer}')`
-  console.log(addTokiQuery);
+  // console.log(addTokiQuery);
   pool.query(addTokiQuery, (error,result) => {
     if (error)
       res.end(error) 
@@ -104,7 +104,7 @@ app.post('/changed', (req,res) => {
   var total = parseFloat(fly) + parseFloat(fight) + parseFloat(fire) + parseFloat(water) + parseFloat(electric) + parseFloat(frozen);
   var trainer = req.body.trainer;
   var changeQuery = `UPDATE Tokimon SET name = '${name}', weight = ${weight}, height = ${height}, fly = ${fly}, fight = ${fight}, fire= ${fire}, water = ${water}, electric = ${electric}, frozen = ${frozen}, total = ${total}, trainer = '${trainer}' WHERE tokimonid = ${tokimonid}`;
-  console.log(changeQuery)
+  // console.log(changeQuery)
   pool.query(changeQuery, (error,result) => {
     if (error)
       res.end(error.toString());
@@ -135,6 +135,25 @@ app.get('/info',(req,res) => {
   })
 });
 
+app.get('/size',(req,res) => {
+  var getUsersQuery = `SELECT * FROM Tokimon`;
+  pool.query(getUsersQuery, (error,result) => {
+    if (error)
+      res.end(error.toString());
+    var results = {'rows': result.rows};
+    res.render('./size', results);  
+  })
+});
+
+app.get('/type',(req,res) => {
+  var getUsersQuery = `SELECT * FROM Tokimon`;
+  pool.query(getUsersQuery, (error,result) => {
+    if (error)
+      res.end(error.toString());
+    var results = {'rows': result.rows};
+    res.render('./type', results);  
+  })
+});
 
 // app.post('/login', (req,res) => {
 //   // console.log('post');
