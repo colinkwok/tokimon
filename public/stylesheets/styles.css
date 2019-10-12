@@ -1,6 +1,6 @@
 html,body{
   height: 100%;
-  background-color: lightcyan; 
+  background-color: rgb(246, 213, 156); 
 }
 table, th, td {
   border: 1px solid black;
@@ -17,6 +17,13 @@ table {
   /* width: 100%; */
   display: inline;
   /* background-color: orange; */
+  align-items: flex-end;
+  justify-content: center;
+}
+#chart {
+  height: 40%;
+  width: 40%;
+  display: inline-flex;
   align-items: flex-end;
   justify-content: center;
 }

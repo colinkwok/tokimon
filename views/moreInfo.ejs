@@ -4,6 +4,53 @@
     <meta charset="utf-8">
     <title></title>
   <link rel = "stylesheet" type = "text/css" href = "/stylesheets/styles.css" />
+  <% rows.forEach((r) => { %>
+    <style>
+         #fly {
+            color: black;
+            float: left;
+            margin: 1%;
+            background-color: grey;
+            height: <%= ((r.fly /  r.total) * 100).toFixed(1) %>%; 
+         }   
+         #fight{
+            color: white;
+            float: left;
+            margin: 1%;
+            background-color: purple;
+            height: <%= ((r.fight /  r.total) * 100).toFixed(1) %>%; 
+         } 
+         #fire {
+            color: black;
+            float: left;
+            margin: 1%;
+            background-color: red;
+            height: <%= ((r.fire/  r.total) * 100).toFixed(1) %>%; 
+         } 
+         #water {
+            color: white;
+            float: left;
+            margin: 1%;
+            background-color: blue;
+            height: <%= ((r.water/  r.total) * 100).toFixed(1) %>%; 
+         } 
+         #electric {
+            color: black;
+            float: left;
+            margin: 1%;
+            background-color:yellow;
+            height: <%= ((r.electric /  r.total) * 100).toFixed(1) %>%; 
+         } 
+         #frozen {
+            color: black;
+            float: left;
+            margin: 1%;
+            background-color: rgb(148, 172, 230);
+            height: <%= ((r.frozen /  r.total) * 100).toFixed(1) %>%; 
+         } 
+         
+    </style>
+   <% }) %>
   </head>
   <body>
     <body>
@@ -40,6 +87,51 @@
             </tr>
           <% }) %>
       </table>
+      <h2>
+        Chart for Ability Percentages
+      </h2>
+      <div id = "chart">
+        <% rows.forEach((r) => { %>
+          <div id = "fly">
+            <p>
+                <%= ((r.fly /  r.total) * 100).toFixed(1) %>%
+                <br>Fly
+            </p>
+          </div>
+          <div id= "fight">
+            <p>
+                <%= ((r.fight /  r.total) * 100).toFixed(1) %>%
+                <br>Fight
+            </p>
+            
+          </div>
+          <div id= "fire">
+            <p>
+                <%= ((r.fire /  r.total) * 100).toFixed(1) %>%
+                <br>Fire
+            </p>
+          </div>
+          <div id= "water">
+            <p>
+                <%= ((r.water /  r.total) * 100).toFixed(1) %>%
+                <br>Water
+            </p>
+          </div>
+          <div id= "electric">
+            <p>
+                <%= ((r.electric /  r.total) * 100).toFixed(1) %>%
+                <br>Electric
+            </p>
+          </div>
+          <div id= "frozen">
+            <p>
+                <%= ((r.frozen /  r.total) * 100).toFixed(1) %>%
+                <br>Frozen
+            </p>
+          </div>
+        <% }) %>
+      </div>
+
   </body>
   </body>
 </html>

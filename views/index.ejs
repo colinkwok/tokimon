@@ -6,7 +6,7 @@
     <link rel = "stylesheet" type = "text/css" href = "/stylesheets/styles.css" />
   </head>
   <body>
-    <H1>Tokimon Database</H1>
+    <H1>Welcome to the Tokimon Database!</H1>
     <table id = "tokimon_table">
       <tr>
         <th>Tokimon ID</th>
@@ -39,10 +39,13 @@
         </tr>
       <% }) %>
   </table>
-    <button type="button" id ="add">Add a Tokimon</button>
-    <button type="button" id ="change">Change a Tokimon</button>
-    <button type="button" id ="delete">Delete a Tokimon</button>
-    <button type="button" id ="display">Display a Tokimon</button>
-    <button type="button" id ="all">See All Tokimon</button>
+  <h2>Add, Delete, Query or Change any of the Tokimon below: </h2>
+    <button type="button" id ="add" onclick="window.location.href = './add';">Add a Tokimon</button>
+    <button type="button" id ="change" onclick="window.location.href = './change';">Change a Tokimon</button>
+    <button type="button" id ="delete" onclick="window.location.href = './delete';">Delete a Tokimon</button>
+    <button type="button" id ="display" onclick="window.location.href = './info';">Display Tokimon Info</button>
+    <button type="button" id ="all" onclick="window.location.href = './tokimon';">See All Tokimon</button>
+    <button type="button" id ="all" onclick="window.location.href = './size';">See Tokimon Sizes</button>
+    <button type="button" id ="sort" onclick="window.location.href = './sort';">Order the Tokimon by Ability / Attributes</button>
   </body>
 </html>

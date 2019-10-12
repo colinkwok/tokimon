@@ -7,23 +7,22 @@
   </head>
   <body>
     <body>
-      <h1>Tokimon Info Page</h1>
-      <h2>Click on the individual links to see specific info on each Tokimon!</h2>
+      <h1>Compare Tokimon</h1>
+      <h2>Order the Tokimon in ascending order by Weight, Height, Fly, Fight, Fire, Water, Electric, Frozen, or Total Values!</h2>
       <table id = "tokimon_table">
           <tr>
             <th>Tokimon ID</th>
             <th>Name</th>
-            <th>Weight</th>
-            <th>Height</th>
-            <th>Fly</th>
-            <th>Fight</th>
-            <th>Fire</th>
-            <th>Water</th>
-            <th>Electric</th>
-            <th>Frozen</th>
-            <th>Total</th>
+            <th><p><a href="./sort/weight">Weight</a></p></th>
+            <th><p><a href="./sort/height">Height</a></p></th>
+            <th><p><a href="./sort/fly">Fly</a></p></th>
+            <th><p><a href="./sort/fight">Fight</a></p></th>
+            <th><p><a href="./sort/fire">Fire</a></p></th>
+            <th><p><a href="./sort/water">Water</a></p></th>
+            <th><p><a href="./sort/electric">Electric</a></p></th>
+            <th><p><a href="./sort/frozen">Frozen</a></p></th>
+            <th><p><a href="./sort/total">Total</a></p></th>
             <th>Trainer</th>
-            <th>More Info</th>
           </tr>
           <% rows.forEach((r) => { %>
             <tr>
@@ -39,7 +38,6 @@
               <td> <%= r.frozen %> </td>
               <td> <%= r.total %> </td>
               <td> <%= r.trainer %> </td>
-              <td><p><a href="./tokimon/<%= r.tokimonid %>">Link</a></p></td>
             </tr>
           <% }) %>
       </table>

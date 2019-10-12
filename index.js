@@ -10,7 +10,6 @@ pool = new Pool({
   // ssl: true // comment out if developing locally
 });
 
-
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -155,23 +154,35 @@ app.get('/size',(req,res) => {
   })
 });
 
-app.get('/type',(req,res) => {
+app.get('/sort',(req,res) => {
   var getUsersQuery = `SELECT * FROM Tokimon`;
   pool.query(getUsersQuery, (error,result) => {
     if (error)
       res.end(error.toString());
     var results = {'rows': result.rows};
-    res.render('./type', results);  
+    res.render('./sort', results);  
   })
 });
 
-// app.post('/login', (req,res) => {
-//   // console.log('post');
-//   // console.log(req.body);
-//   // console.log(req.body);
-//   var username = req.body.user;
-//   var password = req.body.pwd;
-//   res.send(`Hello, ${username}.  You have password ${password}`);
+app.get('/sort/:attribute',(req,res) => {
+  // console.log(req.params);
+  var getUsersQuery = `SELECT * FROM Tokimon ORDER BY ${req.params.attribute} ASC`;
+  pool.query(getUsersQuery, (error,result) => {
+    if (error)
+      res.end(error.toString());
+    var results = {'rows': result.rows};
+    res.render('./tokimon', results);  
+  })
+});
+
+// app.get('/type',(req,res) => {
+//   var getUsersQuery = `SELECT * FROM Tokimon`;
+//   pool.query(getUsersQuery, (error,result) => {
+//     if (error)
+//       res.end(error.toString());
+//     var results = {'rows': result.rows};
+//     res.render('./type', results);  
+//   })
 // });
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
