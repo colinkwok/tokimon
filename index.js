@@ -57,7 +57,14 @@ app.post('/added', (req,res) => {
   pool.query(addTokiQuery, (error,result) => {
     if (error)
       res.end(error) 
-    res.send(`Tokimon: '${name}',${weight},${height},${fly},${fight},${fire},${water},${electric},${frozen},${total},'${trainer}' has been added to the database`);
+    // res.send(`Tokimon: '${name}',${weight},${height},${fly},${fight},${fire},${water},${electric},${frozen},${total},'${trainer}' has been added to the database`);
+    var getUsersQuery = `SELECT * FROM Tokimon`;
+    pool.query(getUsersQuery, (error,result) => {
+      if (error)
+       res.end(error.toString());
+      var results = {'rows': result.rows};
+      res.render('./index',results)  
+    })
   })
 });
 app.get('/delete', (req, res) => {
@@ -76,7 +83,14 @@ app.post('/deleted', (req,res) => {
   pool.query(deleteQuery, (error,result) => {
     if (error)
       res.end(error.toString());
-    res.send(`Tokimon With ID: ${tokimonid} has been deleted from the database`);
+    // res.send(`Tokimon With ID: ${tokimonid} has been deleted from the database`);
+    var getUsersQuery = `SELECT * FROM Tokimon`;
+    pool.query(getUsersQuery, (error,result) => {
+      if (error)
+       res.end(error.toString());
+      var results = {'rows': result.rows};
+      res.render('./index',results)  
+    })
   })
 });
 // app.post('/deleteMultiple', (req,res) => {
@@ -117,7 +131,14 @@ app.post('/changed', (req,res) => {
   pool.query(changeQuery, (error,result) => {
     if (error)
       res.end(error.toString());
-    res.send(`Tokimon With ID: ${tokimonid} has been updated in the database`);
+    // res.send(`Tokimon With ID: ${tokimonid} has been updated in the database`);
+    var getUsersQuery = `SELECT * FROM Tokimon`;
+    pool.query(getUsersQuery, (error,result) => {
+      if (error)
+       res.end(error.toString());
+      var results = {'rows': result.rows};
+      res.render('./index',results)  
+    })
   })
 });
 
@@ -171,7 +192,7 @@ app.get('/sort/:attribute',(req,res) => {
     if (error)
       res.end(error.toString());
     var results = {'rows': result.rows};
-    res.render('./tokimon', results);  
+    res.render('./order', results);  
   })
 });
 

@@ -83,14 +83,15 @@
         </table>
 
     <form class="" action="/deleted" method="post">
-      <input id ="deleteID" type="number" name="tokimonid" placeholder="Enter the Tokimon ID of the Tokimon to Delete">
+      <input id ="deleteID" type="number" min="1" name="tokimonid" placeholder="Enter the Tokimon ID of the Tokimon to Delete" required>
       <input type="submit" name="tokimonDelete" value="Delete Tokimon">
     </form> 
 
-    <button type="button" id ="add">Add a Tokimon</button>
+    <button type="button" id ="home" onclick="window.location.href = './';">Home</button>
+    <!-- <button type="button" id ="add">Add a Tokimon</button>
     <button type="button" id ="change">Change a Tokimon</button>
     <button type="button" id ="display">Display a Tokimon</button>
-    <button type="button" id ="all">See All Tokimon</button>
+    <button type="button" id ="all">See All Tokimon</button> -->
 
      <!-- <script>
         var deleteTokimon = document.getElementById('deleteBTN');
