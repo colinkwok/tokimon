@@ -53,16 +53,16 @@
         <% }) %>
     </table>
     <form class="" action="/changed" method="post" style= "text-align: center;">
-        <input id ="changeID" type="number" min="1" name="tokimonid" placeholder="Existing Tokimon ID" required>
+        <input id ="changeID" type="number" min="1" step="1" name="tokimonid" placeholder="Existing Tokimon ID" required>
         <input id ="newName" type="text" name="name" placeholder="New Name" required>
-        <input id ="newWeight" type="number" min="0" name="weight" placeholder="New Weight" required>
-        <input id ="newHeight" type="number" min="0" name="height" placeholder="New Height" required>
-        <input id ="newFly" type="number" min="0" name="fly" placeholder="New Fly Value " required>
-        <input id ="newFight" type="number" min="0" name="fight" placeholder="New Fight Value" required>
-        <input id ="newFire" type="number" min="0" name="fire" placeholder="New Fire Value" required>
-        <input id ="newWater" type="number" min="0" name="water" placeholder="New Water Value" required>
-        <input id ="newElectric" type="number" min="0" name="electric" placeholder="New Electric Value" required>
-        <input id ="newFrozen" type="number" min="0" name="frozen" placeholder="New Frozen Value" required>
+        <input id ="newWeight" type="number" min="0" step="1" name="weight" placeholder="New Weight" required>
+        <input id ="newHeight" type="number" min="0" step="1" name="height" placeholder="New Height" required>
+        <input id ="newFly" type="number" min="0" step="1" name="fly" placeholder="New Fly Value " required>
+        <input id ="newFight" type="number" min="0" step="1" name="fight" placeholder="New Fight Value" required>
+        <input id ="newFire" type="number" min="0" step="1" name="fire" placeholder="New Fire Value" required>
+        <input id ="newWater" type="number" min="0" step="1" name="water" placeholder="New Water Value" required>
+        <input id ="newElectric" type="number" min="0" step="1" name="electric" placeholder="New Electric Value" required>
+        <input id ="newFrozen" type="number" min="0" step="1" name="frozen" placeholder="New Frozen Value" required>
         <input id ="newTrainer" type="text" name="trainer" placeholder="New Trainer" required>
         <input type="submit" name="" value="Change Tokimon">
     </form> 
