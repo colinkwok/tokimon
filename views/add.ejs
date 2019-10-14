@@ -6,8 +6,19 @@
     <link rel = "stylesheet" type = "text/css" href = "/stylesheets/styles.css" />
   </head>
   <body>
+    <div class = "topnav">
+        <a href="./">Home</a>
+        <a href="./add">Add a Tokimon</a>
+        <a href="./change">Change a Tokimon</a>
+        <a href="./delete">Delete a Tokimon</a>
+        <a href="./info">Tokimon Info</a>
+        <a href="./tokimon">See All Tokimon</a>
+        <a href="./size">See Tokimon Sizes</a>
+        <a href="./sort">Order the Tokimon by Ability/Attributes</a>
+        <a style="float: right; padding-right: 1%; color: #f2f2f2;" href="https://github.com/colinkwok/tokimon">Created By Colin K.</a>
+    </div>
     <h1>Add a new Tokimon</h1>
-    <form class="" action="/added" method="post">
+    <form class="" action="/added" method="post" style= "text-align: center;">
         <input id ="newName" type="text" name="name" placeholder="Name" required>
         <input id ="newWeight" type="number" min="0" name="weight" placeholder="Weight" required>
         <input id ="newHeight" type="number" min="0" name="height" placeholder="Height" required>
@@ -20,7 +31,7 @@
         <input id ="newTrainer" type="text" name="trainer" placeholder="Trainer" required>
         <input type="submit" name="" value="Add Tokimon">
     </form> 
-    <button type="button" id ="home" onclick="window.location.href = './';">Home</button>
+    <!-- <button type="button" id ="home" onclick="window.location.href = './';">Home</button> -->
     <!-- <button type="button" id ="change">Change a Tokimon</button>
     <button type="button" id ="delete">Delete a Tokimon</button>
     <button type="button" id ="display">Display a Tokimon</button>

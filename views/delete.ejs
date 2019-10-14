@@ -7,6 +7,21 @@
     <link rel = "stylesheet" type = "text/css" href = "/stylesheets/styles.css" />
   </head>
   <body>
+
+    <div class = "topnav">
+        <a href="./">Home</a>
+        <a href="./add">Add a Tokimon</a>
+        <a href="./change">Change a Tokimon</a>
+        <a href="./delete">Delete a Tokimon</a>
+        <a href="./info">Tokimon Info</a>
+        <a href="./tokimon">See All Tokimon</a>
+        <a href="./size">See Tokimon Sizes</a>
+        <a href="./sort">Order the Tokimon by Ability/Attributes</a>
+        <div>
+            <a style="float: right; padding-right: 1%; color: #f2f2f2;" href="https://github.com/colinkwok/tokimon">Created By Colin K.</a>
+        </div>
+    </div>
+
     <!-- <script src="../public/js/script.js" defer></script> -->
     <h1>Delete a Tokimon</h1>
 
@@ -82,12 +97,13 @@
             <% }) %>
         </table>
 
-    <form class="" action="/deleted" method="post">
-      <input id ="deleteID" type="number" min="1" name="tokimonid" placeholder="Enter the Tokimon ID of the Tokimon to Delete" required>
+    <form class="" action="/deleted" method="post" style= "text-align: center;">
+      <input id ="deleteID" type="number" min="1" name="tokimonid" placeholder="Tokimon ID of the Tokimon to Delete" required>
       <input type="submit" name="tokimonDelete" value="Delete Tokimon">
     </form> 
 
-    <button type="button" id ="home" onclick="window.location.href = './';">Home</button>
+    <!-- <button type="button" id ="home" onclick="window.location.href = './';">Home</button> -->
+
     <!-- <button type="button" id ="add">Add a Tokimon</button>
     <button type="button" id ="change">Change a Tokimon</button>
     <button type="button" id ="display">Display a Tokimon</button>

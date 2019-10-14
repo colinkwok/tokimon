@@ -9,7 +9,7 @@
            #ID<%= r.tokimonid %> {
               color: red;
               /* float: left; */
-              margin: 1%;
+              margin: 5%;
               background-color: black;
               width: <%= r.weight %>px;
               height: <%= r.height %>px; 
@@ -26,13 +26,25 @@
      <% }) %>
   </head>
   <body>
-    <body>
+      <div class = "topnav">
+          <a href="./">Home</a>
+          <a href="./add">Add a Tokimon</a>
+          <a href="./change">Change a Tokimon</a>
+          <a href="./delete">Delete a Tokimon</a>
+          <a href="./info">Tokimon Info</a>
+          <a href="./tokimon">See All Tokimon</a>
+          <a href="./size">See Tokimon Sizes</a>
+          <a href="./sort">Order the Tokimon by Ability/Attributes</a>
+          <div>
+              <a style="float: right; padding-right: 1%; color: #f2f2f2;" href="https://github.com/colinkwok/tokimon">Created By Colin K.</a>
+          </div>
+      </div>
       <h1>Tokimon Sizes</h1>
         <div id = "tokimon_sizes">
           <% rows.forEach((r) => { %>
            <div id = "ID<%= r.tokimonid %>" >
              <p id = "P<%= r.tokimonid %>"> 
-                Tokimon ID: <%= r.tokimonid %>
+                ID: <%= r.tokimonid %>
                 <br> <%= r.name %>  
                 <% if (r.height >= 1151) { %>
                   <br>Tokimon is very tall and is not shown to scale
@@ -45,7 +57,6 @@
            </div>
           <% }) %>
         </div>
-        <button type="button" id ="home" onclick="window.location.href = './';">Home</button>
-  </body>
+        <!-- <button type="button" id ="home" onclick="window.location.href = './';">Home</button> -->
   </body>
 </html>

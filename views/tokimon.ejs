@@ -6,8 +6,20 @@
     <link rel = "stylesheet" type = "text/css" href = "/stylesheets/styles.css" />
   </head>
   <body>
-    <body>
-      <h1>Tokimon</h1>
+      <div class = "topnav">
+          <a href="./">Home</a>
+          <a href="./add">Add a Tokimon</a>
+          <a href="./change">Change a Tokimon</a>
+          <a href="./delete">Delete a Tokimon</a>
+          <a href="./info">Tokimon Info</a>
+          <a href="./tokimon">See All Tokimon</a>
+          <a href="./size">See Tokimon Sizes</a>
+          <a href="./sort">Order the Tokimon by Ability/Attributes</a>
+          <div>
+              <a style="float: right; padding-right: 1%; color: #f2f2f2;" href="https://github.com/colinkwok/tokimon">Created By Colin K.</a>
+          </div>
+        </div>
+      <h1>All Tokimon</h1>
       <table id = "tokimon_table">
           <tr>
             <th>Tokimon ID</th>
@@ -40,7 +52,7 @@
             </tr>
           <% }) %>
       </table>
-      <button type="button" id ="home" onclick="window.location.href = './';">Home</button>
-  </body>
+      <!-- <button type="button" id ="home" onclick="window.location.href = './';">Home</button> -->
+ 
   </body>
 </html>

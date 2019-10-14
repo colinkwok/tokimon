@@ -14,7 +14,7 @@
             height: <%= ((r.fly /  r.total) * 100).toFixed(1) %>%; 
          }   
          #fight{
-            color: white;
+            color: black;
             float: left;
             margin: 1%;
             background-color: purple;
@@ -28,10 +28,10 @@
             height: <%= ((r.fire/  r.total) * 100).toFixed(1) %>%; 
          } 
          #water {
-            color: white;
+            color: black;
             float: left;
             margin: 1%;
-            background-color: blue;
+            background-color: rgb(131, 131, 235);
             height: <%= ((r.water/  r.total) * 100).toFixed(1) %>%; 
          } 
          #electric {
@@ -53,7 +53,19 @@
    <% }) %>
   </head>
   <body>
-    <body>
+      <div class = "topnav">
+          <a href="../">Home</a>
+          <a href="../add">Add a Tokimon</a>
+          <a href="../change">Change a Tokimon</a>
+          <a href="../delete">Delete a Tokimon</a>
+          <a href="../info">Tokimon Info</a>
+          <a href="../tokimon">See All Tokimon</a>
+          <a href="../size">See Tokimon Sizes</a>
+          <a href="../sort">Order the Tokimon by Ability/Attributes</a>
+          <div>
+              <a style="float: right; padding-right: 1%; color: #f2f2f2;" href="https://github.com/colinkwok/tokimon">Created By Colin K.</a>
+          </div>
+      </div>
       <h1>Specific Tokimon Info</h1>
       <table id = "tokimon_table">
           <tr>
@@ -131,8 +143,7 @@
           </div>
         <% }) %>
       </div>
-      <button type="button" id ="home" onclick="window.location.href = './';">Home</button>
-      <button type="button" id ="display" onclick="window.location.href = '../info';">Back to Display Tokimon Info Page</button>
-  </body>
+      <!-- <button type="button" id ="home" onclick="window.location.href = './';">Home</button> -->
+      <!-- <button type="button" id ="display" onclick="window.location.href = '../info';">Back to Display Tokimon Info Page</button> -->
   </body>
 </html>
